@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <title>Skills link builder</title>
+    <style>
+      :root { color-scheme: light; --ink:#182232; --muted:#56657a; --brand:#1b6eb6; --line:#dfe6ee; }
+      * { box-sizing: border-box; }
+      body { margin:0; padding:40px 20px; background:#eef3f8; color:var(--ink); font-family:"Segoe UI",sans-serif; line-height:1.5; }
+      main { width:min(960px,100%); margin:auto; padding:32px; border:1px solid var(--line); border-radius:24px; background:white; box-shadow:0 18px 45px rgba(8,30,52,.08); }
+      h1 { margin:0 0 8px; font-size:clamp(2rem,4vw,3rem); letter-spacing:-.04em; }
+      .lead { margin:0 0 28px; color:var(--muted); }
+      .groups { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 32px; }
+      fieldset { min-width:0; margin:0; padding:18px; border:1px solid var(--line); border-radius:16px; }
+      legend { padding:0 8px; color:#0a2a43; font-size:.82rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+      .options { display:flex; flex-wrap:wrap; gap:8px; }
+      label { display:inline-flex; align-items:center; gap:7px; padding:7px 10px; border:1px solid #dceaf8; border-radius:999px; background:#f1f6fb; cursor:pointer; font-size:.9rem; font-weight:700; }
+      label:has(input:checked) { border-color:var(--brand); background:var(--brand); color:white; }
+      input[type="checkbox"] { margin:0; accent-color:var(--brand); }
+      .output { margin-top:28px; padding-top:24px; border-top:1px solid var(--line); }
+      .output label { display:block; padding:0; border:0; background:none; cursor:default; color:var(--muted); font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; }
+      .url-row { display:flex; gap:10px; margin-top:8px; }
+      #share-url { flex:1; min-width:0; padding:11px 13px; border:1px solid var(--line); border-radius:10px; color:var(--ink); font:inherit; }
+      button, .open-link { min-height:44px; padding:0 16px; border:1px solid var(--line); border-radius:999px; background:white; color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+      button.primary { border-color:var(--brand); background:var(--brand); color:white; }
+      .actions { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-top:14px; }
+      .open-link { display:inline-flex; align-items:center; text-decoration:none; }
+      #status { color:var(--brand); font-size:.9rem; }
+      @media (max-width:700px) { main{padding:24px 18px}.groups{grid-template-columns:1fr}.url-row{flex-direction:column} }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Skills link builder</h1>
+      <p class="lead">Select the technologies to highlight beside the relevant experience. This page is not linked from the public site and is excluded from search indexing.</p>
+
+      <div id="groups" class="groups"></div>
+
+      <div class="output">
+        <label for="share-url">Shareable portfolio URL</label>
+        <div class="url-row">
+          <input id="share-url" type="text" readonly />
+          <button id="copy-link" class="primary" type="button">Copy link</button>
+        </div>
+        <div class="actions">
+          <a id="open-link" class="open-link" target="_blank" rel="noreferrer">Open preview</a>
+          <button id="clear" type="button">Clear selection</button>
+          <span id="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const skillGroups = {
+        'Languages': [['cpp','C++'],['python','Python'],['c','C'],['go','Go'],['ada','Ada'],['bash','Bash'],['csharp','C#'],['java','Java'],['typescript','TypeScript']],
+        'Frameworks & UI': [['django','Django'],['fastapi','FastAPI'],['react','React'],['openlayers','OpenLayers'],['gtk','GTK'],['mfc','MFC']],
+        'Integration & messaging': [['rest-apis','REST APIs'],['kafka','Apache Kafka'],['protobuf','Protobuf'],['zeromq','ZeroMQ'],['postgrest','PostgREST'],['rpc','RPC']],
+        'Data & identity': [['postgresql','PostgreSQL'],['ingres','Ingres'],['sql','SQL'],['ldap','LDAP'],['jwt','JWT'],['entra-id','Microsoft Entra ID'],['oauth2-pkce','OAuth 2.0/PKCE']],
+        'Testing & tooling': [['pytest','pytest'],['pytest-django','pytest-django'],['cmake','CMake'],['gcc','GCC'],['gdb','GDB'],['stl','STL'],['boost','Boost']],
+        'Platforms & delivery': [['docker','Docker'],['podman','Podman'],['openshift','OpenShift'],['nginx','Nginx']]
+      };
+
+      const groups = document.getElementById('groups');
+      const shareUrl = document.getElementById('share-url');
+      const openLink = document.getElementById('open-link');
+      const status = document.getElementById('status');
+
+      Object.entries(skillGroups).forEach(([groupName, skills]) => {
+        const fieldset = document.createElement('fieldset');
+        const legend = document.createElement('legend');
+        const options = document.createElement('div');
+        legend.textContent = groupName;
+        options.className = 'options';
+
+        skills.forEach(([id, labelText]) => {
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'checkbox';
+          input.value = id;
+          input.addEventListener('change', updateUrl);
+          label.append(input, document.createTextNode(labelText));
+          options.append(label);
+        });
+
+        fieldset.append(legend, options);
+        groups.append(fieldset);
+      });
+
+      function updateUrl() {
+        const selected = [...document.querySelectorAll('input:checked')].map((input) => input.value);
+        const target = new URL('./', window.location.href);
+        if (selected.length) target.searchParams.set('skills', selected.join(','));
+        target.hash = 'experience';
+        const readableUrl = target.toString().replaceAll('%2C', ',');
+        shareUrl.value = readableUrl;
+        openLink.href = readableUrl;
+        status.textContent = selected.length ? `${selected.length} selected` : 'No highlights selected';
+      }
+
+      document.getElementById('clear').addEventListener('click', () => {
+        document.querySelectorAll('input:checked').forEach((input) => { input.checked = false; });
+        updateUrl();
+      });
+
+      document.getElementById('copy-link').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(shareUrl.value);
+          status.textContent = 'Link copied';
+        } catch {
+          shareUrl.select();
+          status.textContent = 'Select and copy the URL manually';
+        }
+      });
+
+      updateUrl();
+    </script>
+  </body>
+</html>
