@@ -416,7 +416,6 @@
         color: var(--muted);
       }
 
-      .skills-box,
       .contact-box {
         background: rgba(255,255,255,0.8);
         border: 1px solid var(--line);
@@ -424,7 +423,6 @@
         box-shadow: 0 10px 25px rgba(11, 30, 48, 0.03);
       }
 
-      html[data-theme="dark"] .skills-box,
       html[data-theme="dark"] .contact-box,
       html[data-theme="dark"] .job-card,
       html[data-theme="dark"] .info-card {
@@ -436,29 +434,6 @@
         margin: 0.9rem 0 0;
         color: var(--muted);
         font-size: 0.82rem;
-      }
-
-      .skills-box {
-        padding: 28px 32px;
-      }
-
-      .skill-groups {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px 34px;
-      }
-
-      .skill-group {
-        padding-top: 18px;
-        border-top: 1px solid var(--line);
-      }
-
-      .skill-group h3 {
-        margin: 0 0 13px;
-        color: var(--brand-2);
-        font-size: 0.82rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
       }
 
       .relocation-highlight,
@@ -475,36 +450,10 @@
         margin-top: 6px;
       }
 
-      .skill-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 9px;
-      }
-
-      .skill {
-        background: linear-gradient(180deg, #f4f8fb, #edf5ff);
-        border: 1px solid #dceaf8;
-        border-radius: 999px;
-        padding: 8px 12px;
-        font: inherit;
-        font-size: 0.92rem;
-        color: var(--ink);
-        font-weight: 700;
-        transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-      }
-
-      html[data-theme="dark"] .skill,
       html[data-theme="dark"] .tech-tag {
         border-color: #29475e;
         background: #142a3a;
         color: #c6d6e2;
-      }
-
-      .skill.is-highlighted {
-        border-color: var(--brand);
-        background: linear-gradient(135deg, var(--brand), #3a87cf);
-        color: white;
-        box-shadow: 0 8px 18px rgba(27, 110, 182, 0.2);
       }
 
       .timeline {
@@ -639,14 +588,6 @@
         font-size: 0.82rem;
         font-weight: 700;
         line-height: 1.25;
-        transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-      }
-
-      .tech-tag.is-highlighted {
-        border-color: var(--brand);
-        background: linear-gradient(135deg, var(--brand), #3a87cf);
-        color: white;
-        box-shadow: 0 6px 14px rgba(27, 110, 182, 0.18);
       }
 
       .two-col {
@@ -776,10 +717,6 @@
 
         .focus-card {
           margin: 0 12px 12px;
-        }
-
-        .skill-groups {
-          grid-template-columns: 1fr;
         }
 
       }
@@ -926,103 +863,6 @@
         </div>
       </section>
 
-      <section class="section" hidden aria-hidden="true">
-        <div class="container">
-          <div class="section-header">
-            <h2>Technical skills</h2>
-          </div>
-
-          <div class="skills-box">
-            <div class="skills-intro">
-              <p>Select the technologies most relevant to a role or project, then copy a link that opens this page with those skills highlighted.</p>
-              <div class="skills-actions">
-                <button id="copy-skills-link" class="skills-action" type="button" disabled>Copy selection link</button>
-                <button id="clear-skills" class="skills-action" type="button" disabled>Clear</button>
-                <span id="skills-status" class="skills-status" aria-live="polite"></span>
-              </div>
-            </div>
-
-            <div class="skill-groups">
-              <section class="skill-group" aria-labelledby="skills-languages">
-                <h3 id="skills-languages">Languages</h3>
-                <div class="skill-list">
-                  <button class="skill" type="button" data-skill="cpp" aria-pressed="false">C++</button>
-                  <button class="skill" type="button" data-skill="python" aria-pressed="false">Python</button>
-                  <button class="skill" type="button" data-skill="c" aria-pressed="false">C</button>
-                  <button class="skill" type="button" data-skill="go" aria-pressed="false">Go</button>
-                  <button class="skill" type="button" data-skill="ada" aria-pressed="false">Ada</button>
-                  <button class="skill" type="button" data-skill="bash" aria-pressed="false">Bash</button>
-                </div>
-              </section>
-
-              <section class="skill-group" aria-labelledby="skills-integration">
-                <h3 id="skills-integration">Integration &amp; messaging</h3>
-                <div class="skill-list">
-                  <button class="skill" type="button" data-skill="rest-apis" aria-pressed="false">REST APIs</button>
-                  <button class="skill" type="button" data-skill="kafka" aria-pressed="false">Apache Kafka</button>
-                  <button class="skill" type="button" data-skill="protobuf" aria-pressed="false">Protobuf</button>
-                  <button class="skill" type="button" data-skill="zeromq" aria-pressed="false">ZeroMQ</button>
-                  <button class="skill" type="button" data-skill="postgrest" aria-pressed="false">PostgREST</button>
-                  <button class="skill" type="button" data-skill="rpc" aria-pressed="false">RPC</button>
-                </div>
-              </section>
-
-              <section class="skill-group" aria-labelledby="skills-data">
-                <h3 id="skills-data">Data &amp; identity</h3>
-                <div class="skill-list">
-                  <button class="skill" type="button" data-skill="postgresql" aria-pressed="false">PostgreSQL</button>
-                  <button class="skill" type="button" data-skill="ingres" aria-pressed="false">Ingres</button>
-                  <button class="skill" type="button" data-skill="sql" aria-pressed="false">SQL</button>
-                  <button class="skill" type="button" data-skill="ldap" aria-pressed="false">LDAP</button>
-                  <button class="skill" type="button" data-skill="jwt" aria-pressed="false">JWT</button>
-                  <button class="skill" type="button" data-skill="oauth2" aria-pressed="false">OAuth 2.0</button>
-                  <button class="skill" type="button" data-skill="entra-id" aria-pressed="false">Microsoft Entra ID</button>
-                </div>
-              </section>
-
-              <section class="skill-group" aria-labelledby="skills-testing">
-                <h3 id="skills-testing">Testing &amp; diagnostics</h3>
-                <div class="skill-list">
-                  <button class="skill" type="button" data-skill="gtest" aria-pressed="false">GTest</button>
-                  <button class="skill" type="button" data-skill="gmock" aria-pressed="false">GMock</button>
-                  <button class="skill" type="button" data-skill="catch2" aria-pressed="false">Catch2</button>
-                  <button class="skill" type="button" data-skill="pytest" aria-pressed="false">pytest</button>
-                  <button class="skill" type="button" data-skill="valgrind" aria-pressed="false">Valgrind</button>
-                  <button class="skill" type="button" data-skill="asan" aria-pressed="false">ASan</button>
-                  <button class="skill" type="button" data-skill="tsan" aria-pressed="false">TSan</button>
-                  <button class="skill" type="button" data-skill="ubsan" aria-pressed="false">UBSan</button>
-                </div>
-              </section>
-
-              <section class="skill-group" aria-labelledby="skills-tooling">
-                <h3 id="skills-tooling">Build &amp; engineering tools</h3>
-                <div class="skill-list">
-                  <button class="skill" type="button" data-skill="cmake" aria-pressed="false">CMake</button>
-                  <button class="skill" type="button" data-skill="gcc" aria-pressed="false">GCC</button>
-                  <button class="skill" type="button" data-skill="clang" aria-pressed="false">Clang</button>
-                  <button class="skill" type="button" data-skill="gdb" aria-pressed="false">GDB</button>
-                  <button class="skill" type="button" data-skill="clang-tidy" aria-pressed="false">clang-tidy</button>
-                  <button class="skill" type="button" data-skill="cppcheck" aria-pressed="false">Cppcheck</button>
-                </div>
-              </section>
-
-              <section class="skill-group" aria-labelledby="skills-platforms">
-                <h3 id="skills-platforms">Platforms &amp; delivery</h3>
-                <div class="skill-list">
-                  <button class="skill" type="button" data-skill="linux" aria-pressed="false">Linux</button>
-                  <button class="skill" type="button" data-skill="docker" aria-pressed="false">Docker</button>
-                  <button class="skill" type="button" data-skill="podman" aria-pressed="false">Podman</button>
-                  <button class="skill" type="button" data-skill="kubernetes" aria-pressed="false">Kubernetes</button>
-                  <button class="skill" type="button" data-skill="openshift" aria-pressed="false">OpenShift</button>
-                  <button class="skill" type="button" data-skill="jenkins" aria-pressed="false">Jenkins</button>
-                  <button class="skill" type="button" data-skill="sonarqube" aria-pressed="false">SonarQube</button>
-                  <button class="skill" type="button" data-skill="ansible" aria-pressed="false">Ansible</button>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section id="experience" class="section">
         <div class="container">
@@ -1054,20 +894,20 @@
                   <li>Contributed across the full stack of a web-based ATM scenario-building platform built on an adapted BlueSky simulator, including the browser UI, APIs, scenario generation, messaging, data persistence and containerised deployment.</li>
                 </ul>
                 <div class="tech-list" aria-label="SIM Builder technologies">
-                  <span class="tech-tag" data-skill="python">Python</span>
-                  <span class="tech-tag" data-skill="django">Django</span>
-                  <span class="tech-tag" data-skill="fastapi">FastAPI</span>
-                  <span class="tech-tag" data-skill="react">React</span>
-                  <span class="tech-tag" data-skill="typescript">TypeScript</span>
-                  <span class="tech-tag" data-skill="openlayers">OpenLayers</span>
-                  <span class="tech-tag" data-skill="postgresql">PostgreSQL</span>
-                  <span class="tech-tag" data-skill="zeromq">ZeroMQ</span>
-                  <span class="tech-tag" data-skill="entra-id">Microsoft Entra ID</span>
-                  <span class="tech-tag" data-skill="oauth2-pkce">OAuth 2.0/PKCE</span>
-                  <span class="tech-tag" data-skill="pytest">pytest</span>
-                  <span class="tech-tag" data-skill="pytest-django">pytest-django</span>
-                  <span class="tech-tag" data-skill="docker">Docker</span>
-                  <span class="tech-tag" data-skill="nginx">Nginx</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Django</span>
+                  <span class="tech-tag">FastAPI</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">OpenLayers</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">ZeroMQ</span>
+                  <span class="tech-tag">Microsoft Entra ID</span>
+                  <span class="tech-tag">OAuth 2.0/PKCE</span>
+                  <span class="tech-tag">pytest</span>
+                  <span class="tech-tag">pytest-django</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Nginx</span>
                 </div>
 
                 <div class="project-label">iCAS SIM</div>
@@ -1077,19 +917,19 @@
                   <li>Integrated the simulator with multiple peripheral systems, diagnosing cross-system issues and supporting reliable end-to-end operation.</li>
                 </ul>
                 <div class="tech-list" aria-label="iCAS SIM technologies">
-                  <span class="tech-tag" data-skill="cpp">C++</span>
-                  <span class="tech-tag" data-skill="ada">Ada</span>
-                  <span class="tech-tag" data-skill="python">Python</span>
-                  <span class="tech-tag" data-skill="bash">Bash</span>
-                  <span class="tech-tag" data-skill="postgresql">PostgreSQL</span>
-                  <span class="tech-tag" data-skill="ingres">Ingres</span>
-                  <span class="tech-tag" data-skill="docker">Docker</span>
-                  <span class="tech-tag" data-skill="stl">STL</span>
-                  <span class="tech-tag" data-skill="boost">Boost</span>
-                  <span class="tech-tag" data-skill="cmake">CMake</span>
-                  <span class="tech-tag" data-skill="gcc">GCC</span>
-                  <span class="tech-tag" data-skill="gdb">GDB</span>
-                  <span class="tech-tag" data-skill="gtk">GTK</span>
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">Ada</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Bash</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Ingres</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">STL</span>
+                  <span class="tech-tag">Boost</span>
+                  <span class="tech-tag">CMake</span>
+                  <span class="tech-tag">GCC</span>
+                  <span class="tech-tag">GDB</span>
+                  <span class="tech-tag">GTK</span>
                 </div>
               </div>
             </article>
@@ -1108,15 +948,15 @@
                   <li>Modernised substantial areas of a legacy MFC and Microsoft RPC codebase, improving maintainability and enabling continued product development.</li>
                 </ul>
                 <div class="tech-list" aria-label="Accent Pointe technologies">
-                  <span class="tech-tag" data-skill="cpp">C++</span>
-                  <span class="tech-tag" data-skill="c">C</span>
-                  <span class="tech-tag" data-skill="csharp">C#</span>
-                  <span class="tech-tag" data-skill="java">Java</span>
-                  <span class="tech-tag" data-skill="sql">SQL</span>
-                  <span class="tech-tag" data-skill="bash">Bash</span>
-                  <span class="tech-tag" data-skill="python">Python</span>
-                  <span class="tech-tag" data-skill="mfc">MFC</span>
-                  <span class="tech-tag" data-skill="rpc">RPC</span>
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">C</span>
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">SQL</span>
+                  <span class="tech-tag">Bash</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">MFC</span>
+                  <span class="tech-tag">RPC</span>
                 </div>
               </div>
             </article>
@@ -1135,24 +975,24 @@
                   <li>Built and integrated service interfaces, messaging flows and authentication components supporting reliable communication between business-critical systems.</li>
                 </ul>
                 <div class="tech-list" aria-label="ABN AMRO Clearing technologies">
-                  <span class="tech-tag" data-skill="cpp">C++</span>
-                  <span class="tech-tag" data-skill="c">C</span>
-                  <span class="tech-tag" data-skill="go">Go</span>
-                  <span class="tech-tag" data-skill="csharp">C#</span>
-                  <span class="tech-tag" data-skill="java">Java</span>
-                  <span class="tech-tag" data-skill="python">Python</span>
-                  <span class="tech-tag" data-skill="bash">Bash</span>
-                  <span class="tech-tag" data-skill="sql">SQL</span>
-                  <span class="tech-tag" data-skill="ingres">Ingres</span>
-                  <span class="tech-tag" data-skill="rest-apis">REST APIs</span>
-                  <span class="tech-tag" data-skill="postgrest">PostgREST</span>
-                  <span class="tech-tag" data-skill="zeromq">ZeroMQ</span>
-                  <span class="tech-tag" data-skill="kafka">Apache Kafka</span>
-                  <span class="tech-tag" data-skill="protobuf">Protobuf</span>
-                  <span class="tech-tag" data-skill="ldap">LDAP</span>
-                  <span class="tech-tag" data-skill="jwt">JWT</span>
-                  <span class="tech-tag" data-skill="openshift">OpenShift</span>
-                  <span class="tech-tag" data-skill="podman">Podman</span>
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">C</span>
+                  <span class="tech-tag">Go</span>
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Bash</span>
+                  <span class="tech-tag">SQL</span>
+                  <span class="tech-tag">Ingres</span>
+                  <span class="tech-tag">REST APIs</span>
+                  <span class="tech-tag">PostgREST</span>
+                  <span class="tech-tag">ZeroMQ</span>
+                  <span class="tech-tag">Apache Kafka</span>
+                  <span class="tech-tag">Protobuf</span>
+                  <span class="tech-tag">LDAP</span>
+                  <span class="tech-tag">JWT</span>
+                  <span class="tech-tag">OpenShift</span>
+                  <span class="tech-tag">Podman</span>
                 </div>
               </div>
             </article>
@@ -1243,18 +1083,6 @@
         } catch {}
       });
 
-      const technologyTags = [...document.querySelectorAll('.tech-tag[data-skill]')];
-      const validSkills = new Set(technologyTags.map((tag) => tag.dataset.skill));
-      const requestedSkills = new URLSearchParams(window.location.search)
-        .get('skills')
-        ?.split(',')
-        .map((skill) => skill.trim().toLowerCase())
-        .filter(Boolean) ?? [];
-      const selectedSkills = new Set(requestedSkills.filter((skill) => validSkills.has(skill)));
-
-      technologyTags.forEach((tag) => {
-        tag.classList.toggle('is-highlighted', selectedSkills.has(tag.dataset.skill));
-      });
     </script>
   </body>
 </html>
