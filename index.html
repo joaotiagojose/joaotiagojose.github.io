@@ -105,6 +105,23 @@
         letter-spacing: -0.06em;
       }
 
+      .identity-row {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+
+      .profile-photo {
+        width: 106px;
+        height: 106px;
+        flex: 0 0 auto;
+        object-fit: cover;
+        border: 3px solid white;
+        outline: 1px solid #cbd9e6;
+        border-radius: 24px;
+        box-shadow: 0 14px 28px rgba(11, 30, 48, 0.18);
+      }
+
       .hero-summary {
         margin: 18px 0 0;
         max-width: 660px;
@@ -331,6 +348,20 @@
         font-size: 0.82rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+      }
+
+      .relocation-highlight,
+      .relocation-availability {
+        display: block;
+      }
+
+      .relocation-highlight {
+        color: white;
+        font-weight: 700;
+      }
+
+      .relocation-availability {
+        margin-top: 6px;
       }
 
       .skill-list {
@@ -658,6 +689,20 @@
         .contact-links {
           grid-template-columns: 1fr;
         }
+
+        .profile-photo {
+          width: 74px;
+          height: 74px;
+          border-radius: 18px;
+        }
+
+        .identity-row {
+          gap: 14px;
+        }
+
+        .identity-row h1 {
+          font-size: clamp(2.15rem, 10vw, 2.7rem);
+        }
       }
     </style>
   </head>
@@ -691,7 +736,10 @@
                 <span class="eyebrow-more">&amp; beyond</span>
               </span>
             </p>
-            <h1>João José</h1>
+            <div class="identity-row">
+              <img class="profile-photo" src="assets/joao-jose-profile.png" alt="Portrait of João José" width="600" height="600" />
+              <h1>João José</h1>
+            </div>
             <p class="hero-summary">
               <strong>Senior software engineer with 10+ years</strong> building and modernising business-critical
               systems across air traffic management, electronic trading and financial risk. Hands-on expertise in
@@ -719,7 +767,7 @@
 
           <aside class="focus-card" aria-label="Professional focus">
             <div class="badge">Available for remote work</div>
-            <h3>Critical systems. Reliable delivery.</h3>
+            <h3>Turning complex problems into reliable systems</h3>
             <p>
               Hands-on ownership from architecture and integration through testing, troubleshooting, and
               production delivery.
@@ -728,15 +776,20 @@
             <div class="mini-grid">
               <div class="mini-item">
                 <strong>Focus</strong>
-                C++, Python, distributed systems, service integrations, product delivery
+                Finding pragmatic solutions, backed by a strong background in backend and systems engineering
               </div>
               <div class="mini-item">
-                <strong>Impact</strong>
-                Shipping business-critical software for regulated, international teams
+                <strong>Experience</strong>
+                10+ years across air traffic management, electronic trading and financial risk
               </div>
               <div class="mini-item">
-                <strong>Location</strong>
-                Portugal • available for fully remote international roles and contracts
+                <strong>Relocation</strong>
+                <span class="relocation-highlight">
+                  After 10 years in the Netherlands, I recently returned to my hometown in Portugal.
+                </span>
+                <span class="relocation-availability">
+                  Open to new opportunities, including fully remote international roles and contracts.
+                </span>
               </div>
             </div>
           </aside>
