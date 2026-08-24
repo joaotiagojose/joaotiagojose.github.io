@@ -64,59 +64,6 @@
         margin: 0 auto;
       }
 
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(20, 31, 46, 0.06);
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 74px;
-        gap: 16px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        font-weight: 800;
-        white-space: nowrap;
-      }
-
-      .brand-context {
-        color: #526274;
-        font-size: 0.94rem;
-        font-style: italic;
-        font-weight: 550;
-        letter-spacing: 0;
-      }
-
-      .brand-name {
-        font-size: 1.05rem;
-        color: var(--ink);
-        font-weight: 850;
-        letter-spacing: 0.005em;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        font-size: 0.96rem;
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .nav-links a:hover {
-        color: var(--ink);
-      }
-
       .hero {
         padding: 38px 0 28px;
       }
@@ -158,11 +105,17 @@
         letter-spacing: -0.06em;
       }
 
-      .subtitle {
+      .hero-summary {
         margin: 18px 0 0;
         max-width: 660px;
-        font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+        font-size: clamp(0.98rem, 1.15vw, 1.08rem);
         color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .hero-summary strong {
+        color: var(--ink);
+        font-weight: 750;
       }
 
       .contact-grid {
@@ -197,12 +150,6 @@
         align-items: center;
         gap: 7px;
         white-space: nowrap;
-      }
-
-      .eyebrow-core-label {
-        color: #5d6d7d;
-        font-size: 0.7rem;
-        letter-spacing: 0.09em;
       }
 
       .eyebrow-skill {
@@ -331,7 +278,7 @@
       }
 
       section[id] {
-        scroll-margin-top: 96px;
+        scroll-margin-top: 24px;
       }
 
       .section-header {
@@ -349,54 +296,12 @@
         color: var(--muted);
       }
 
-      .summary-box,
       .skills-box,
       .contact-box {
         background: rgba(255,255,255,0.8);
         border: 1px solid var(--line);
         border-radius: 24px;
         box-shadow: 0 10px 25px rgba(11, 30, 48, 0.03);
-      }
-
-      .summary-box {
-        padding: 28px 30px;
-      }
-
-      .summary-box p {
-        margin: 0;
-        font-size: 1.05rem;
-        color: var(--ink);
-      }
-
-      .summary-lead {
-        max-width: 920px;
-      }
-
-      .summary-highlights {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-        margin: 22px 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .summary-highlights li {
-        padding: 14px;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: #f6f9fc;
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      .summary-highlights strong {
-        display: block;
-        margin-bottom: 4px;
-        color: var(--brand-2);
-        font-size: 0.76rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
       }
 
       .last-updated {
@@ -625,20 +530,39 @@
       }
 
       .contact-box {
-        padding: 28px 30px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(470px, 0.95fr);
+        align-items: center;
+        gap: 28px 36px;
+        padding: 30px 32px;
+      }
+
+      .contact-copy {
+        align-self: center;
       }
 
       .contact-box p {
         margin: 0;
+        max-width: 650px;
         color: var(--muted);
         font-size: 1.03rem;
+        line-height: 1.7;
+      }
+
+      .contact-copy .section-header {
+        margin-bottom: 10px;
       }
 
       .contact-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 18px;
+        display: grid;
+        grid-template-columns: minmax(225px, 1.1fr) minmax(170px, 0.9fr);
+        gap: 12px;
+        align-self: center;
+      }
+
+      .contact-link-column {
+        display: grid;
+        gap: 12px;
       }
 
       .contact-links a {
@@ -651,6 +575,7 @@
         background: white;
         font-weight: 700;
         gap: 8px;
+        white-space: nowrap;
       }
 
       footer {
@@ -675,7 +600,8 @@
 
       @media (max-width: 860px) {
         .hero-grid,
-        .two-col {
+        .two-col,
+        .contact-box {
           grid-template-columns: 1fr;
         }
 
@@ -695,24 +621,10 @@
           margin: 0 12px 12px;
         }
 
-        .nav {
-          align-items: flex-start;
-          flex-direction: column;
-          padding: 18px 0;
-        }
-
-        .nav-links {
-          flex-wrap: wrap;
-          gap: 10px 14px;
-        }
-
         .skill-groups {
           grid-template-columns: 1fr;
         }
 
-        .summary-highlights {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
       }
 
       @media (max-width: 560px) {
@@ -730,7 +642,6 @@
           display: grid;
         }
 
-        .summary-box,
         .skills-box,
         .contact-box,
         .job-card,
@@ -739,13 +650,13 @@
           padding-right: 18px;
         }
 
-        .summary-highlights {
-          grid-template-columns: 1fr;
-        }
-
         .contact-grid {
           column-gap: 18px;
           font-size: 0.9rem;
+        }
+
+        .contact-links {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -768,38 +679,23 @@
         <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.6 10.8Z"/>
       </symbol>
     </svg>
-    <header class="topbar">
-      <div class="container nav">
-        <div class="brand" aria-label="Curriculum Vitae, João José">
-          <span class="brand-context">Curriculum Vitae</span>
-          <span class="brand-name">João José</span>
-        </div>
-
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
     <main>
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">
               <span class="eyebrow-role">Senior Software Engineer</span>
-              <span class="eyebrow-stack" aria-label="Core technologies: C++ and Python, plus a broader stack">
-                <span class="eyebrow-core-label">Core</span>
+              <span class="eyebrow-stack" aria-label="C++ and Python, plus a broader technology stack">
                 <span class="eyebrow-skill">C++</span>
                 <span class="eyebrow-skill">Python</span>
                 <span class="eyebrow-more">+ broader stack</span>
               </span>
             </p>
             <h1>João José</h1>
-            <p class="subtitle">
-              Building dependable software for critical systems, trading workflows, and complex integrations
-              across Europe.
+            <p class="hero-summary">
+              <strong>Senior software engineer with 10+ years</strong> building and modernising business-critical
+              systems across air traffic management, electronic trading and financial risk. Hands-on expertise in
+              C++, Python, distributed integrations, messaging, APIs and databases.
             </p>
 
             <div class="contact-grid" aria-label="Contact details and professional profiles">
@@ -825,8 +721,8 @@
             <div class="badge">Available for remote work</div>
             <h3>Critical systems. Reliable delivery.</h3>
             <p>
-              Senior engineer with 10+ years across air traffic management, financial risk, electronic trading,
-              messaging, APIs, and distributed integrations.
+              Hands-on ownership from architecture and integration through testing, troubleshooting, and
+              production delivery.
             </p>
 
             <div class="mini-grid">
@@ -844,28 +740,6 @@
               </div>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-header">
-            <h2>Professional summary</h2>
-          </div>
-
-          <div class="summary-box">
-            <p class="summary-lead">
-              Senior C++ software engineer with 10+ years building and modernising business-critical systems
-              in air traffic management, electronic trading and financial risk. Hands-on expertise in C++,
-              Python, distributed integrations, messaging, APIs and databases, with international Agile delivery experience.
-            </p>
-            <ul class="summary-highlights" aria-label="Professional highlights">
-              <li><strong>Experience</strong>10+ years in business-critical software</li>
-              <li><strong>Core stack</strong>C++, Python and systems integration</li>
-              <li><strong>Domains</strong>Air traffic, trading and financial risk</li>
-              <li><strong>Availability</strong>Portugal · fully remote internationally</li>
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -1134,18 +1008,24 @@
       <section id="contact" class="section">
         <div class="container">
           <div class="contact-box">
-            <div class="section-header" style="margin-bottom: 10px;">
-              <h2>Let’s connect</h2>
+            <div class="contact-copy">
+              <div class="section-header">
+                <h2>Let’s connect</h2>
+              </div>
+              <p>
+                I help teams build robust software, modernise legacy systems, and integrate complex platforms with
+                clear engineering discipline and dependable delivery.
+              </p>
             </div>
-            <p>
-              I help teams build robust software, modernise legacy systems, and integrate complex platforms with
-              clear engineering discipline and dependable delivery.
-            </p>
             <div class="contact-links">
-              <a href="mailto:joao@jtjsoftware.com"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>joao@jtjsoftware.com</a>
-              <a href="tel:+351910005592"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>+351 910 005 592</a>
-              <a href="https://linkedin.com/in/joaojose" target="_blank" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>LinkedIn</a>
-              <a href="https://github.com/joaotiagojose" target="_blank" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>GitHub</a>
+              <div class="contact-link-column" aria-label="Direct contact">
+                <a href="tel:+351910005592"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>+351 910 005 592</a>
+                <a href="mailto:joao@jtjsoftware.com"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>joao@jtjsoftware.com</a>
+              </div>
+              <div class="contact-link-column" aria-label="Professional profiles">
+                <a href="https://linkedin.com/in/joaojose" target="_blank" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>LinkedIn</a>
+                <a href="https://github.com/joaotiagojose" target="_blank" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>GitHub</a>
+              </div>
             </div>
           </div>
         </div>
