@@ -680,7 +680,32 @@
         font-size: 0.94rem;
       }
 
+      .footer-content,
+      .footer-identity,
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .footer-content {
+        gap: 4px 24px;
+      }
+
+      .footer-identity {
+        gap: 2px 16px;
+      }
+
+      .footer-links {
+        gap: 4px 20px;
+      }
+
       footer a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        white-space: nowrap;
         color: var(--ink);
         font-weight: 700;
         text-decoration: underline;
@@ -723,6 +748,24 @@
       }
 
       @media (max-width: 560px) {
+        footer {
+          padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .footer-identity {
+          flex-direction: column;
+        }
+
+        .theme-toggle {
+          right: max(18px, env(safe-area-inset-right, 0px));
+          bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+        }
+
         .hero-copy,
         .focus-card {
           padding-left: 22px;
@@ -1066,7 +1109,16 @@
     </main>
 
     <footer>
-      © <span id="year"></span> João José · Senior Software Engineer · <a href="academic/" target="_blank" rel="noopener noreferrer">Academic profile</a> · <a href="https://jtjsoftware.com" target="_blank" rel="noreferrer">jtjsoftware.com</a>
+      <div class="container footer-content">
+        <div class="footer-identity">
+          <span>© <span id="year"></span> João José</span>
+          <span>Senior Software Engineer</span>
+        </div>
+        <nav class="footer-links" aria-label="Profile links">
+          <a href="academic/" target="_blank" rel="noopener noreferrer">Academic profile</a>
+          <a href="https://jtjsoftware.com" target="_blank" rel="noopener noreferrer">jtjsoftware.com</a>
+        </nav>
+      </div>
     </footer>
 
     <script>
