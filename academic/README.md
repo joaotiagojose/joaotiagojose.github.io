@@ -37,3 +37,7 @@ Serve the repository root and open `/academic/`. Check desktop/mobile, both them
 ## Academic CV design
 
 The academic PDF and editable DOCX use a four-page structure: research and funding; publications; education and teaching; professional experience and skills. Segoe UI, restrained teal metadata and links, title-first unnumbered references, and consistent page furniture establish the hierarchy. All nine publications and the separate dissertation are retained. The PDF was exported with Microsoft Word and all four pages rendered and visually checked. The dissertation link uses the stable institutional handle, and the contact area includes the verified Google Scholar profile.
+
+## Publication link presentation
+
+Publication titles link directly to the existing verified PDFs; the book title links to its matching ISBN catalogue record. Standalone PDF action rows are removed, including the dissertation duplicate link. Full DOI identifiers appear as links immediately after the venue. Blavigator explicitly labels the collection identifier as a Supplement DOI; it is not an individual-paper DOI. The academic PDF and editable DOCX follow the same title-link and inline-DOI convention.
