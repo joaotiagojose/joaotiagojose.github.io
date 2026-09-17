@@ -41,3 +41,7 @@ The academic PDF and editable DOCX use a four-page structure: research and fundi
 ## Publication link presentation
 
 Publication titles link directly to the existing verified PDFs; the book title links to its matching ISBN catalogue record. Standalone PDF action rows are removed, including the dissertation duplicate link. Full DOI identifiers appear as links immediately after the venue. Blavigator explicitly labels the collection identifier as a Supplement DOI; it is not an individual-paper DOI. The academic PDF and editable DOCX follow the same title-link and inline-DOI convention.
+
+## CV version and page furniture
+
+Version `20260917_001` uses a compact first-page identity block, one-line research area and a shared profile-link row. There is no running name/email header. Every footer places `CV ID 20260917_001` on the left, `Curriculum Vitae • João José` at the page centre and the page count on the right. The page download links include the version to avoid an older cached PDF and use a versioned download filename.
