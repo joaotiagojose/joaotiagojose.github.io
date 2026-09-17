@@ -11,7 +11,7 @@ Static page for https://joaotiagojose.github.io/academic/. Content is readable w
 - Doctoral studies were suspended after the first two years; no completed doctorate is claimed.
 - The author confirmed on 17 September 2026 that the MSc degree grade is 16/20 and the dissertation grade is 18/20; both are labelled separately.
 - Research dates are shown as 2008–2013 because the CVs disagree on the final month.
-- The dissertation cover is dated 2010; MSc completion is June 2011. The 2013 book has the same title but is a separate work, ISBN 978-3-659-45730-2. The original CV does not specify the book publisher, so it is omitted.
+- The dissertation cover is dated 2010; MSc completion is June 2011. The 2013 book has the same title but is a separate work, ISBN 978-3-659-45730-2. The publisher, LAP LAMBERT Academic Publishing, was subsequently confirmed against the author profile and the ISBN catalogue entry: https://www.abebooks.com/9783659457302/Real-time-path-obstacle-detection-blind-3659457302/plp .
 - The GIS article appeared online in 2014 and in volume 14 in 2015; the bibliography retains both facts.
 - Blavigator is an ECVP 2012 conference abstract, number 97, printed page 99, in Perception 41(1_suppl). Verified against the full publisher PDF at https://journals.sagepub.com/doi/pdf/10.1177/03010066120410s101 . The link now names the full abstract collection and points to page 99; the previous unverified UAlg bitstream was removed. The supplement DOI is not an individual-paper DOI.
 - The Blavigator funding code in the old CV contains a typo. The published ICPRAM paper and institutional project record confirm RIPD/ADA/109690/2009: https://iconline.ipleiria.pt/entities/project/85c7d355-a54f-4d68-8fba-66dc5be887aa .
@@ -33,3 +33,7 @@ Serve the repository root and open `/academic/`. Check desktop/mobile, both them
 - UAlg and SAGE file transfers returned HTTP 403 in this environment. External source links are retained until verified copies are available; a cross-origin download attribute alone would not guarantee a download. No thesis copy is presented as the separate book.
 
 - The two obtainable article PDFs were validated locally, but repeated network failures prevented uploading the larger files. They remain in the local working artifacts; no broken same-site paper URLs are published. Uniform article downloads remain pending.
+
+## Academic CV design
+
+The academic PDF and editable DOCX use a four-page structure: research and funding; publications; education and teaching; professional experience and skills. Segoe UI, restrained teal metadata and links, title-first unnumbered references, and consistent page furniture establish the hierarchy. All nine publications and the separate dissertation are retained. The PDF was exported with Microsoft Word and all four pages rendered and visually checked. The dissertation link uses the stable institutional handle, and the contact area includes the verified Google Scholar profile.
