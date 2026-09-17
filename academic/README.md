@@ -20,6 +20,16 @@ Static page for https://joaotiagojose.github.io/academic/. Content is readable w
 
 ## Link behaviour and review
 
-Document and destination links use `target="_blank"` and `rel="noopener noreferrer"`, without forced-download attributes. Internal section navigation stays in the page. External servers and the reader's browser settings can still force downloads; the site cannot override those preferences. UAlg PDF links use their content endpoints.
+Destination links use `target="_blank"` and `rel="noopener noreferrer"`. The downloadable files hosted here use `download` instead. Internal section navigation stays in the page. External servers and the reader's browser settings can still force downloads; the site cannot override those preferences. The journal prototype PDF now follows the actual file link in the official UAlg record: bitstream 85196e30-0ce5-433a-94c0-82a4d0679a0c.
 
 Serve the repository root and open `/academic/`. Check desktop/mobile, both themes, the CV link, all bibliography entries and local section navigation. Validate and visually inspect every page of the PDF after regeneration.
+
+## Follow-up: PDF downloads
+
+- Both CVs are served from this site with download attributes. Article PDFs retain their original external sources. The normal CV now links to the academic CV in its contact line, in both PDF and DOCX.
+- GIS article date checked against the primary Springer record: journal issue March 2015; online publication 19 February 2014. Both dates are explicit.
+- GIS PDF: https://isr.tecnico.ulisboa.pt/wp-content/uploads/2015/03/Computer-vision-and-GIS-for-the-navigation-of-blind-persons-in-buildings.pdf (14 pages).
+- Visual navigation PDF: https://www.scitepress.org/papers/2012/37114/37114.pdf (5 pages).
+- UAlg and SAGE file transfers returned HTTP 403 in this environment. External source links are retained until verified copies are available; a cross-origin download attribute alone would not guarantee a download. No thesis copy is presented as the separate book.
+
+- The two obtainable article PDFs were validated locally, but repeated network failures prevented uploading the larger files. They remain in the local working artifacts; no broken same-site paper URLs are published. Uniform article downloads remain pending.
