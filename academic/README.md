@@ -4,7 +4,7 @@ Static page for https://joaotiagojose.github.io/academic/. Content is readable w
 
 ## Content provenance (17 September 2026)
 
-- Current contact information and recent professional experience: `Joao_Jose_CV_20260823_005.docx`.
+- Current contact information and recent professional experience: `Joao_Jose_CV_20260823_005.docx`. The academic email was replaced with `joaotiagojose@gmail.com` at the author's request on 18 September 2026.
 - Academic details, grants, the CERATONIA award, the 2013 book, BSc project, Electronics Engineering studies and Evision applied research: the three-page older `CV.pdf` supplied by the author on 17 September 2026. This private source is not redistributed.
 - All nine publications in that CV are included, plus the separately listed master's dissertation. Publisher and institutional records supply final metadata for the entries formerly marked accepted. No claim is made about works absent from these sources.
 - Bibliography, HTML and academic PDF/DOCX should be updated together. The PDF is linked prominently on the page; DOCX is retained as an editable counterpart.
@@ -44,4 +44,4 @@ Publication titles link directly to the existing verified PDFs; the book title l
 
 ## CV version and page furniture
 
-Version `20260918_001` is designed for both screen and print, with a compact first-page identity block, readable contact/profile addresses and consistently right-aligned dates for publications, research, education, qualifications and professional experience. Subprojects are indented beneath their parent role. There is no running name/email header. Every footer places `CV ID 20260918_001` on the left, `Curriculum Vitae • João José` at the page centre and the page count on the right. All four rendered pages were visually inspected; the nine publication titles, key academic facts, printed URLs, footer position and dates were also checked against the source. The page download links include the version to avoid an older cached PDF and use a versioned download filename.
+Version `20260918_002` is designed for both screen and print, with a compact first-page identity block, readable contact/profile addresses and consistently right-aligned dates for publications, research, education, qualifications and professional experience. Subprojects are indented beneath their parent role. There is no running name/email header. Every footer places `CV ID 20260918_002` on the left, `Curriculum Vitae • João José` at the page centre and the page count on the right. All four rendered pages were visually inspected; the nine publication titles, key academic facts, printed URLs, footer position and dates were also checked against the source. The page download links include the version to avoid an older cached PDF and use a versioned download filename.
